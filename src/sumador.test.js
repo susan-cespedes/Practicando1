@@ -1,4 +1,4 @@
-import {validarcampo,validarlongitud} from "./sumador.js";
+import {validarcampo,validarlongitud,validarlongituddetalle} from "./sumador.js";
 
 describe("VALIDAR CAMPO", () => {
   it("El post deberia tener un titulo", () => {
@@ -15,4 +15,10 @@ describe("VALIDAR CAMPO", () => {
     const dato="holiiiiiiiiiiiiiiiiiiiiii"
     expect(validarlongitud(dato)).toEqual(true);
   });
+
+  it("Detalle deberia ser maximo de 150 caracteres", () => {
+    const dato="holiiiiiiiiiiiiiiiiiiiiiisssssss"
+    expect(validarlongitud(dato)).toEqual(true);
+  });
+  
 });
