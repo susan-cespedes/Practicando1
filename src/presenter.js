@@ -1,4 +1,4 @@
-import {validarcampo,validarlongitud} from "./sumador";
+import {validarcampo,validarlongitud,validarlongituddetalle} from "./sumador";
 
 const titulo = document.querySelector("#titulo");
 const detalle = document.querySelector("#detalle");
@@ -16,9 +16,10 @@ boton.addEventListener("click", (event) => {
 
   const resultado=validarcampo(titulopost);
   const longitudMensaje=validarlongitud(titulopost);
+  const longituddetalle=validarlongituddetalle(detallepost);
 
-  if(resultado==false || longitudMensaje==false){
-    div.innerHTML = `<p>No puedes ingresar un mensaje sin titulo. / El texto tiene q ser max de 50 caracteres</p>
+  if(resultado==false || longitudMensaje==false || longituddetalle==false){
+    div.innerHTML = `<p>No puedes ingresar un mensaje sin titulo. / El texto tiene q ser max de 50 caracteres. / El detalle tiene q ser max de 150 caracteres</p>
     `;
   }
   else{
